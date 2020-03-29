@@ -16,12 +16,14 @@ public class helper {
 	private WebDriver driver;
 
 	public void createWebDriver() {
-		System.setProperty("webdriver.chrome.driver", "/Users/ajithkeerikkattil/Desktop/code/chromedriver");
+		String driverLocation = System.getProperty("user.home") + "\\Downloads\\chromedriver.exe";
+		System.setProperty("webdriver.chrome.driver", driverLocation);
 		driver = new ChromeDriver();
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 	}
 
 	public void openUrl(String url) {
+		
 		driver.get(url);
 	}
 
